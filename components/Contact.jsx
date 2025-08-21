@@ -1,7 +1,12 @@
-"use client"
+"use client";
+
+import {
+  MdOutlinePhone,
+  MdOutlineEmail,
+  MdOutlinePinDrop,
+} from "react-icons/md";
 
 export default function Contact() {
-
   async function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -20,15 +25,15 @@ export default function Contact() {
       body: json,
     });
     const result = await response.json();
-    console.log("it's cliedk")
+    console.log("it's cliedk");
     if (result.success) {
-      alert("Your email is sent!")
+      alert("Your email is sent!");
     }
   }
   return (
     <main
-      className="h-screen w-full bg-secondary 
-    flex justify-center items-center rounded-[8rem] p-6 my-20"
+      className="h-screen w-full bg-secondary
+    flex justify-center items-center  rounded-[4rem] md:rounded-[6rem] lg:rounded-[8rem] p-6 my-20 flex-col gap-12"
     >
       <form
         onSubmit={handleSubmit}
@@ -45,17 +50,42 @@ export default function Contact() {
         </label>
         <label className="text-black/40 text-xs flex flex-col gap-2">
           Email
-          <input name="email" type="text" placeholder="mark@gmail.com" required />
+          <input
+            name="email"
+            type="text"
+            placeholder="mark@gmail.com"
+            required
+          />
         </label>
         <label className="text-black/40 text-xs flex flex-col gap-2">
           Message
-          <input name="message" type="text" placeholder="Write your message" required />
+          <input
+            name="message"
+            type="text"
+            placeholder="Write your message"
+            required
+          />
         </label>
 
         <button type="submit" className="mx-auto mt-6">
           Send Message
         </button>
       </form>
+
+      <section
+        className="flex flex-col md:flex-row gap-2 text-black/40 text-xs
+      w-full max-w-[40rem] justify-center items-center md:justify-between "
+      >
+        <p className="flex gap-2 items-center">
+          <MdOutlineEmail /> foundationumoja@gmail.com
+        </p>{" "}
+        <p className="flex gap-2 items-center ">
+          <MdOutlinePhone /> 25-471-311-6453
+        </p>
+        <p className="flex gap-2 items-center">
+          <MdOutlinePinDrop /> Box 8 30205 Matunda Kenya
+        </p>
+      </section>
     </main>
   );
 }

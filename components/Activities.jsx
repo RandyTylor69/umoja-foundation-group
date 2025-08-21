@@ -64,13 +64,8 @@ export default function Activities() {
         </div>
       </div>
       {/** ----- img div ----- */}
-      <div className="h-full w-[75%] md:w-ful relative">
-        <Image
-          src="/images/edu-placeholder.png"
-          alt="ph"
-          fill
-          className="object-cover"
-        />
+      <div className="h-full w-[75%] md:w-ful relative bg-green-300">
+        
       </div>
     </main>
   );

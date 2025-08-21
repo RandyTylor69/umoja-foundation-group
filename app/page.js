@@ -27,7 +27,7 @@ export default function Home() {
       <section id="program" className="scroll-m-20">
         <Program />
       </section>
-      <section id="scenary" className="scroll-m-20">
+      <section id="scenary" className="scroll-m-10">
         <Scenary />
       </section>
       <section id="cost">

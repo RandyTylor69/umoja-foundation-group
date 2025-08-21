@@ -25,7 +25,7 @@ export const activities = [
   },
   {
     id: 5,
-    name: "HIV/AIDS",
+    name: "HIV-AIDS",
     overview: "Raise awareness and support for vulnerable groups facing HIV/AIDS.",
     content: "In Kenya, most of the vulnerable people to be infected are the matatu drivers/touts, barmaids, and commercial sex workers, who often lack access to adequate healthcare, information, and support systems. Many of these individuals live in conditions that increase their risk of contracting HIV/AIDS, including poverty, overcrowded housing, and limited knowledge about prevention methods. Following our community outreach and surveys, we have discovered that a significant number of these vulnerable populations struggle with stigma, discrimination, and limited access to testing and treatment."
   },
@@ -74,31 +74,31 @@ export const programs = [
 
 export const scenaries = [
   {
-    url: "/images/p1.png",
+    url: "/images/p1.jpg",
     name: "Bukhungu Stadium",
     description:
       "The stadium is used mostly for football matches and is the home stadium of Western Stima of the Kenyan Premier League. The stadium has a capacity of 25,000.",
   },
   {
-    url: "/images/p2.png",
+    url: "/images/p2.jpg",
     name: "Kakamega Forest Reserve",
     description:
       "The forest reserve is populated by a network of nature trails. A walk through the high canopies, its silence only broken by bird calls or the chatter of monkey troops or occasionally a gurgle of a nearby stream.",
   },
   {
-    url: "/images/p3.png",
+    url: "/images/p3.jpg",
     name: "Sango Hills Mawe Tatu",
     description:
       "“Mawe tatu” describes the three stones that attract harmless wild animals. The stones are flat on top with a cool breeze and give an aerial view of Matunda town, Cherengani Hills, Lugari Forest, and Mt. Elgon.",
   },
   {
-    url: "/images/p4.png",
+    url: "/images/p4.jpg",
     name: "Mt. Elgon National Park",
     description:
       "The vast form of the mountains stretches 80km in diameter and rises above 3km beyond the surrounding plains. Its high altitudes serve as a haven for flora and fauna.",
   },
   {
-    url: "/images/p5.png",
+    url: "/images/p5.jpg",
     name: "Mwikhupo Falls",
     description:
       "The eternal and constant water supply and flooding by the Nzoia River and her tributaries makes land arable, along which the magnificent Mwikhupo Falls occurs.",

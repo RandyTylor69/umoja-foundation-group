@@ -3,8 +3,15 @@
 
 @theme {
   --color-secondary: #E1DBCB;
-  --color-primary: #F2F0EA;
-}
+  --color-primary: #F2F0EA; 
+
+  --animate-loop-scroll: loop-scroll 50s linear infinite ;
+
+  @keyframes loop-scroll{
+    0%{transform:translateX(0)};
+    100%{transform:translateX(-100%)};
+  }
+  }
 
 @layer base {
   * {

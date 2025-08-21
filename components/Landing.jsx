@@ -1,5 +1,5 @@
 import { GoArrowUpRight } from "react-icons/go";
-
+import Link from "next/link";
 export default function Landing() {
   return (
     <main
@@ -13,9 +13,11 @@ export default function Landing() {
             Umoja Foundation Group is a grassroot community based organization
             located in Kakamega county in the Republic of Kenya.
           </p>
-          <button>
-            Let's Connect <GoArrowUpRight />
-          </button>
+          <a href="#contact">
+            <button>
+              Let's Connect <GoArrowUpRight />
+            </button>
+          </a>
         </article>
       </div>
     </main>

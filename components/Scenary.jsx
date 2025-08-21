@@ -19,43 +19,53 @@ export default function Scenary() {
   ));
 
   return (
-    <main className="h-screen w-full flex flex-col md:flex-row justify-center items-center">
+    <main className="h-screen w-full flex flex-col justify-around items-center gap-12 ">
 
+      {/** ------ bizzare section (1/2) ----- */}
 
-      {/** ------ scene name wrapper ----- */}
-      <section
-        className="w-full max-w-[22rem] justify-center items-center 
-      text-2xl md:text-4xl p-6"
-      >
-        <h1>{scenaries[curr].name}</h1>
-      </section>
+      <div className="w-full h-fit py-8 flex justify-center items-center ">
+        <h1 className="text-2xl md:text-4xl">Around our campus, you will discover:</h1>
+      </div>
 
-      {/** ------ carousel ----- */}
-      <section className="relative w-[18rem] md:w-[21rem] rounded-2xl border-2 overflow-hidden">
-        {/** ------ btn wrapper ----- */}
-        <div className="absolute w-full h-full flex items-center p-2 z-50 justify-between">
-          <FaArrowCircleLeft
-            onClick={goPrev}
-            className="size-8 text-white cursor-pointer"
-          />
-
-          <FaArrowCircleRight
-            onClick={goNext}
-            className="size-8 text-white cursor-pointer"
-          />
-        </div>
-        {/** ------ carousel wrapper ----- */}
-        <div
-          className={`transition-transform ease-out duration-500 flex flex-row z-20`}
-          style={{ transform: `translateX(-${curr * 100}%)` }}
+      {/** ------ lower section (2/2) ----- */}
+      <div className="flex flex-col lg:flex-row justify-center items-center gap-12">
+        {/** ------ scene name wrapper ----- */}
+        <section
+          className="w-full max-w-[22rem] justify-center items-center underline
+          text-xl md:text-2xl p-6"
         >
-          {scenePicsMapped}
-        </div>
-      </section>
-      {/** ------ scene desctiprion wrapper ----- */}
-      <section className="w-full max-w-[22rem] p-6 ">
-        <p>{scenaries[curr].description}</p>
-      </section>
+          <h1>{scenaries[curr].name}</h1>
+        </section>
+
+        {/** ------ carousel ----- */}
+        <section className="relative min-w-[18rem] w-full max-w-[40rem] rounded-2xl border-2 overflow-hidden">
+          {/** ------ btn wrapper ----- */}
+          <div className="absolute w-full h-full flex items-center p-2 z-50 justify-between">
+            <FaArrowCircleLeft
+              onClick={goPrev}
+              className="size-8 text-white cursor-pointer"
+            />
+
+            <FaArrowCircleRight
+              onClick={goNext}
+              className="size-8 text-white cursor-pointer"
+            />
+          </div>
+          {/** ------ carousel wrapper ----- */}
+          <div
+            className={`transition-transform ease-out duration-500 flex flex-row z-20`}
+            style={{ transform: `translateX(-${curr * 100}%)` }}
+          >
+            {scenePicsMapped}
+          </div>
+        </section>
+        {/** ------ scene desctiprion wrapper ----- */}
+        <section className="w-full max-w-[22rem] p-6 ">
+          <p>{scenaries[curr].description}</p>
+        </section>
+      </div>
+            {/** ------- bottom border to the next component --------- */}
+      <div className="w-full border-t-2 text-black/10"></div>
     </main>
   );
 }
