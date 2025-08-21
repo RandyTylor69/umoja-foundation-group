@@ -2,7 +2,8 @@
 @import "tailwindcss-intersect";
 
 @theme {
-  --color-midnight: #121063;
+  --color-secondary: #E1DBCB;
+  --color-primary: #F2F0EA;
 }
 
 @layer base {
@@ -14,6 +15,7 @@
   }
 }
 
+
 h1,
 h2,
 h3,
@@ -21,8 +23,9 @@ a {
   font-family: var(--font-monserrat);
 }
 
-p {
-    font-family: var(--font-inter);
+p, li, span, label,
+.font-inter {
+  font-family: var(--font-inter);
 }
 
 a {
@@ -38,11 +41,14 @@ button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.25rem; 
+  gap: 0.25rem;
 
   background-color: black;
   color: white;
-  padding: 0.5rem 1rem; 
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   border-radius: 2rem;
   width: fit-content;
   border: 2px black solid;
@@ -51,7 +57,19 @@ button {
   transition: background-color 0.3s, color 0.3s;
 }
 
+
+
 button:hover {
-  background-color: oklch(98% 0.016 73.684); 
+  background-color: var(--color-primary);
   color: black;
+}
+
+input {
+  background-color: var(--color-primary);
+  padding: 1rem;
+  color: black;
+}
+
+input:focus{
+  outline: none;
 }

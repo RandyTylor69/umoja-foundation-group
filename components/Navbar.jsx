@@ -2,17 +2,23 @@
 
 import { RxHamburgerMenu } from "react-icons/rx";
 import React from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [burger, setBurger] = React.useState(false);
+  const pathname = usePathname();
 
   function toggleNavbar() {
     setBurger((prev) => !prev);
   }
 
+  // only render the nav bar when we're on the main page
+
+  if (pathname !== "/") return null;
+
   return (
     <header
-      className="px-6 sm:px-12 py-2 w-full h-[3rem] fixed top-0 bg-orange-50
+      className="px-6 sm:px-12 py-2 w-full h-[3rem] fixed top-0 bg-primary
         flex flex-row justify-between border-b-2 z-999
         "
     >
@@ -26,7 +32,8 @@ export default function Navbar() {
       >
         <a href="#mission">Mission</a>
         <a href="#activities">Activities</a>
-        <a href="#program">Our Program</a>
+        <a href="#program">Our Programs</a>
+        <a href="#scenary">Scenary</a>
         <a href="#cost">Cost</a>
         <a href="#contact">Contact us</a>
       </nav>
@@ -45,7 +52,7 @@ export default function Navbar() {
         <nav className="flex flex-col gap-4">
           <a href="#mission">Mission</a>
           <a href="#activities">Activities</a>
-          <a href="#program">Our Program</a>
+          <a href="#program">Our Programs</a>
           <a href="#cost">Cost</a>
           <a href="#contact">Contact us</a>
         </nav>

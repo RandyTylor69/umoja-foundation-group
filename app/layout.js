@@ -11,13 +11,14 @@ const montserrat = Montserrat({
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  weight:['300']
 });
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${montserrat.variable} bg-orange-50`}
+        className={`${montserrat.variable} ${inter.variable} bg-primary`}
       >
         <Navbar />
         <div className="px-6 sm:px-12">{children}</div>
