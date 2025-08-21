@@ -1,13 +1,19 @@
 "use client";
+
 import React from "react";
 import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
 import { AiOutlinePlus } from "react-icons/ai";
-import Image from "next/image";
 import { activities } from "@/utils/data";
+
+import { useInView } from "react-intersection-observer";
 
 export default function Activities() {
   const [activity, setActivity] = React.useState("Education");
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
 
   const currentActivity = activities.map((a) => {
     if (a.name === activity)
@@ -41,13 +47,17 @@ export default function Activities() {
 
   return (
     <main
+      data-scroll-container
       className="h-[85vh] w-full sm:mt-[5rem] md:mt-[10rem]
   flex flex-col md:flex-row gap-6"
     >
       {/** ----- article div ----- */}
       <div
-        className="h-full w-full
-    flex flex-col gap-12 justify-between"
+      ref={ref}
+        className={`h-full w-full  ${
+          inView && `animate-scroll-into-view`
+        }
+    flex flex-col gap-12 justify-between`}
       >
         <section
           className="w-full md:max-w-[50%] 
@@ -64,9 +74,7 @@ export default function Activities() {
         </div>
       </div>
       {/** ----- img div ----- */}
-      <div className="h-full w-[75%] md:w-ful relative bg-green-300">
-        
-      </div>
+      <div className="h-full w-[75%] md:w-ful relative bg-green-300"></div>
     </main>
   );
 }

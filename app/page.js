@@ -15,12 +15,17 @@ export default function Home() {
       <section id="landing">
         <Landing />
       </section>
+      {/** ------- bottom border to the next component --------- */}
+      <div className="w-full border-t-2 text-black/10"></div>
       <section id="mission">
         <Mission />
       </section>
+      {/** ------- bottom border to the next component --------- */}
+      <div className="w-full border-t-2 text-black/10"></div>
       <section id="activities" className="scroll-m-20">
         <Activities />
       </section>
+
       <section>
         <TransitionPage1 />
       </section>

@@ -20,7 +20,7 @@ export default function Footer() {
   return (
     <footer className="h-40 w-full flex flex-col">
       {/** ------ infinite scroll ------- */}
-      <section
+      <section  
         className="h-15 w-full
        py-4 flex overflow-hidden"
       >

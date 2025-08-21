@@ -2,16 +2,32 @@
 @import "tailwindcss-intersect";
 
 @theme {
-  --color-secondary: #E1DBCB;
-  --color-primary: #F2F0EA; 
+  --color-secondary: #e1dbcb;
+  --color-primary: #f2f0ea;
 
-  --animate-loop-scroll: loop-scroll 50s linear infinite ;
+  --animate-loop-scroll: loop-scroll 50s linear infinite;
+  --animate-scroll-into-view: scroll-into-view 1s ease-out ;
 
-  @keyframes loop-scroll{
-    0%{transform:translateX(0)};
-    100%{transform:translateX(-100%)};
+  @keyframes loop-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }
+
+  @keyframes scroll-into-view {
+    0% {
+      transform: translateY(50%);
+      opacity:0
+    }
+    100% {
+      transform: translateY(0);
+      opacity:1
+    }
   }
+}
 
 @layer base {
   * {
@@ -22,7 +38,6 @@
   }
 }
 
-
 h1,
 h2,
 h3,
@@ -30,7 +45,10 @@ a {
   font-family: var(--font-monserrat);
 }
 
-p, li, span, label,
+p,
+li,
+span,
+label,
 .font-inter {
   font-family: var(--font-inter);
 }
@@ -64,8 +82,6 @@ button {
   transition: background-color 0.3s, color 0.3s;
 }
 
-
-
 button:hover {
   background-color: var(--color-primary);
   color: black;
@@ -77,6 +93,6 @@ input {
   color: black;
 }
 
-input:focus{
+input:focus {
   outline: none;
 }

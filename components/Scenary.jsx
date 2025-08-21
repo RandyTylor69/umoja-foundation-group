@@ -3,7 +3,12 @@
 import { scenaries } from "@/utils/data";
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 import React from "react";
+import { useInView } from "react-intersection-observer";
+
 export default function Scenary() {
+  const {ref, inView} = useInView({
+    triggerOnce:true
+  })
   const [curr, setCurr] = React.useState(0); // 1st item
 
   function goPrev() {
@@ -19,7 +24,7 @@ export default function Scenary() {
   ));
 
   return (
-    <main className="h-screen w-full flex flex-col justify-around items-center gap-12 ">
+    <main ref={ref} className={`h-screen w-full flex flex-col justify-around items-center gap-12 ${inView&&`animate-scroll-into-view`}`}>
 
       {/** ------ bizzare section (1/2) ----- */}
 
