@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
         className={`${montserrat.variable} ${inter.variable} bg-primary`}
       >
         <Navbar />
-        <div className="px-6 sm:px-12">{children}</div>
+        <div className="">{children}</div>
         <Footer />
       </body>
     </html>

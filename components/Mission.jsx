@@ -10,8 +10,8 @@ export default function About() {
   }, []);
 
   return (
-    <main
-      className="h-screen w-full
+    <main 
+      className="h-screen w-full px-6 sm:px-12 
         flex flex-col justify-center items-center"
     >
       <section

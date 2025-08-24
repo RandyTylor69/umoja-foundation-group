@@ -2,74 +2,117 @@ export const activities = [
   {
     id: 1,
     name: "Education",
-    overview: "Support education to reduce dropout, early marriages, and poverty.",
-    content: "In the target community there's increase number of school dropout,  increase rate of early pregnancy and marriages, increase rate of drugs  and substance abuse.All these are fuelled by lack of school fees and  poverty among communities.By enabling bright children in the community  to further continue with their education will create a productive  nation. Due to increase rate of poverty in the community people live from hand to mouth,to improve on the economic status of the community we  need to have a vocational training center to equip the community with  knowledge and skills to live a sustainable life..."
+    overview:
+      "Support education to reduce dropout, early marriages, and poverty.",
+    content:
+      "In the target community, there is a rising number of school dropouts, early pregnancies, child marriages, and cases of drug and substance abuse. These challenges are largely fueled by poverty and lack of school fees. Supporting bright children to continue their education will help create a more productive nation. To improve the community’s economic status, we also aim to establish a vocational training center to equip people with knowledge and practical skills for a sustainable livelihood.",
+    url: "/images/a1.jpg",
   },
   {
     id: 2,
     name: "Agriculture",
-    overview: "Promote sustainable farming, food security, and environmental conservation.",
-    content: "The organization focus on environmental and economicsustainability.we work  with small scale farmers to increase food security,production and  promote environment conservation practice. The volunteer to introduce  local farmers to techniques that prevent soil erosion, introduce new  skills on organic farming to reduce the use of chemicals (pesticide).The project work both with livestock and food security Agronomist or volunteers studying or training in the field of agriculture  management are needed for our community in projects for sustainable  agriculture development. participants who join volunteer to help in: Construction of a greenhouse and farming management to increase production. Introduction of new skills of organic farming. Crop maintainance. Planting crops like onions, maize, millet, amongst other crops  introduce.Provide, demonstrate best artificial insemination breeds to  local livestock farmers. The project informs educate and gives skills to the disadvantaged."
+    overview:
+      "Promote sustainable farming, food security, and environmental conservation.",
+    content:
+      "Our organization focuses on environmental and economic sustainability. We work with small-scale farmers to improve food security, increase production, and promote conservation practices. Volunteers introduce local farmers to techniques that prevent soil erosion and share skills in organic farming to reduce the use of harmful chemicals. The project supports both livestock and crop farming. Participants may help with greenhouse construction, farm management, crop planting and maintenance (onions, maize, millet, etc.), and livestock improvement through artificial insemination. These initiatives provide farmers with practical knowledge to achieve sustainable agricultural development.",
+    url: "/images/a2.jpg",
   },
   {
     id: 3,
     name: "Environment",
-    overview: "Conserve nature through cleanups, tree planting, and erosion control.",
-    content: "The organization does many environmental activities that include garbage  collection in our nearby markets, drainage of stagnant water, clearance  if bushes along the road in our local village.Since environment is most  important and attractive to anyone we prefer conserving it by planting  trees with a theme \"Trees for better community\"will improve the look of  the community.we are expected to plant in markets, chief camp, schools,  health facilities and along river banks especially River Nzoia that  always breaks it's shores and by doing so,this will prevent soil erosion during heavy rains.with the help of stakeholders,donor and volunteers  the project will be successful."
+    overview:
+      "Conserve nature through cleanups, tree planting, and erosion control.",
+    content:
+      "The organization carries out various environmental activities, including garbage collection in markets, draining stagnant water, and clearing bushes along village roads. Since a clean and green environment is essential to all, we focus on tree planting under the theme “Trees for a Better Community.” Trees will be planted in markets, schools, health facilities, and along riverbanks—especially River Nzoia, which often floods. These efforts will help prevent soil erosion during heavy rains. With the support of stakeholders, donors, and volunteers, the project will make a lasting impact.",
+    url: "/images/a3.jpg",
   },
   {
     id: 4,
     name: "Child-Care",
-    overview: "Support disadvantaged children with food, clothing, and education.",
-    content: "The organization has many bright disadvantaged children to be assisted,  many walk to school barefoot, tattered uniform,lack books, sleep without blankets, mattress,lack basic needs and school fees,these reduce their  self esteem that contribute to poor performance in school.Following our  ground level survey we have discovered many of the disadvantaged  children and families stay several days without eating anything some die because of hunger or steal from their neighborhood food,by establishing a greenhouse, introduce kitchen gardens and provide farm inputs will  enable them to have food hence eradicate poverty."
+    overview:
+      "Support disadvantaged children with food, clothing, and education.",
+    content:
+      "Many bright but disadvantaged children in our community face severe hardships: walking to school barefoot, wearing torn uniforms, lacking books, or sleeping without blankets and mattresses. Their unmet basic needs often lower their self-esteem and affect school performance. Our surveys reveal that some children and families go for several days without food, leading to malnutrition, hunger-related deaths, or theft for survival. By establishing greenhouses, introducing kitchen gardens, and providing farm inputs, we can help these families grow food, improve nutrition, and break the cycle of poverty.",
+    url: "/images/a4.jpg",
   },
   {
     id: 5,
     name: "HIV-AIDS",
-    overview: "Raise awareness and support for vulnerable groups facing HIV/AIDS.",
-    content: "In Kenya, most of the vulnerable people to be infected are the matatu drivers/touts, barmaids, and commercial sex workers, who often lack access to adequate healthcare, information, and support systems. Many of these individuals live in conditions that increase their risk of contracting HIV/AIDS, including poverty, overcrowded housing, and limited knowledge about prevention methods. Following our community outreach and surveys, we have discovered that a significant number of these vulnerable populations struggle with stigma, discrimination, and limited access to testing and treatment."
+    overview:
+      "Raise awareness and support for vulnerable groups facing HIV/AIDS.",
+    content:
+      "In Kenya, vulnerable groups most at risk of HIV/AIDS include matatu drivers, bar workers, and commercial sex workers, many of whom lack access to healthcare, information, and support systems. Poverty, overcrowded living conditions, and limited knowledge about prevention methods further increase their risk. Our outreach has also revealed that stigma, discrimination, and poor access to testing and treatment remain major challenges. Through awareness programs and community support, we aim to reduce stigma and improve access to essential services for these populations.",
+    url: "/images/a5.jpg",
   },
   {
     id: 6,
     name: "Sanitation",
     overview: "Provide clean water access through boreholes and safe supply.",
-    content: "Water in our community is a major problem, community suffers alot with water  crisis.Women could walk long distance and queue for long time to get  clean water.Our vision is to drill boreholes and have clean water to  save lives of people and animals in our community.We therefore request  well-wishers, organizations, volunteers and other stakeholders to  support the project."
-  }
+    content:
+      "Water scarcity is a major challenge in our community. Women often walk long distances and queue for hours just to fetch clean water. Our vision is to drill boreholes and establish reliable water supply systems to save lives, improve health, and ease the burden on families. We call on well-wishers, organizations, volunteers, and other stakeholders to support this initiative for lasting impact.",
+    url: "/images/a6.jpg",
+  },
 ];
 
 export const programs = [
+  // The "color" field indicates the text color used within the image.
+
   {
     name: "Office Work",
-    description: "Assist with daily office tasks and administrative duties to support the organization."
+    description:
+      "Assist with daily office tasks and administrative duties to support the organization.",
+    url: "/images/pr1.jpg",
+    color: "black",
   },
   {
     name: "Environment",
-    description: "Participate in planting trees, cleaning markets, and other environmental activities."
+    description:
+      "Participate in planting trees, cleaning markets, and other environmental activities.",
+    url: "/images/pr2.jpg",
+    color: "white",
   },
   {
     name: "Medical",
-    description: "Provide professional services at partner health facilities under Ministry of Health guidelines."
+    description:
+      "Provide professional services at partner health facilities under Ministry of Health guidelines.",
+    url: "/images/pr3.jpg",
+    color: "white",
   },
   {
     name: "Fundraising",
-    description: "Help with grant proposals and fundraising efforts in your home country."
+    description:
+      "Help with grant proposals and fundraising efforts in your home country.",
+    url: "/images/pr4.jpg",
+    color: "white",
   },
   {
     name: "Health Education",
-    description: "Visit schools to give talks on HIV/AIDS, STDs, early pregnancy, and other health topics."
+    description:
+      "Visit schools to give talks on HIV/AIDS, STDs, early pregnancy, and other health topics.",
+    url: "/images/pr5.jpg",
+    color: "black",
   },
   {
     name: "OVC Program",
-    description: "Support Orphans and Vulnerable Children with school materials and other assistance."
+    description:
+      "Support Orphans and Vulnerable Children with school materials and other assistance.",
+    url: "/images/pr6.jpg",
+    color: "white",
   },
   {
     name: "General Education",
-    description: "Teach subjects like English, Maths, Science, or others at nearby partner schools."
+    description:
+      "Teach subjects like English, Maths, Science, or others at nearby partner schools.",
+    url: "/images/pr7.jpg",
+    color: "white",
   },
   {
     name: "Jigger Control",
-    description: "Help control jiggers among disadvantaged children, the elderly, and persons with disabilities."
-  }
+    description:
+      "Help control jiggers among disadvantaged children, the elderly, and persons with disabilities.",
+    url: "/images/pr8.jpg",
+    color: "white",
+  },
 ];
 
 export const scenaries = [
@@ -104,5 +147,3 @@ export const scenaries = [
       "The eternal and constant water supply and flooding by the Nzoia River and her tributaries makes land arable, along which the magnificent Mwikhupo Falls occurs.",
   },
 ];
-
-

@@ -11,7 +11,7 @@ export default function Contact() {
     event.preventDefault();
     const formData = new FormData(event.target);
 
-    formData.append("access_key", "2730c65a-cdaa-492b-af80-3cc988a16b13");
+    formData.append("access_key", "084c5de8-febb-493d-8246-1b5228cc71a6");
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
@@ -32,7 +32,7 @@ export default function Contact() {
   }
   return (
     <main
-      className="h-screen w-full bg-secondary
+      className="h-screen w-full bg-secondary px-6 sm:px-12
     flex justify-center items-center  rounded-[4rem] md:rounded-[6rem] lg:rounded-[8rem] p-6 my-20 flex-col gap-12"
     >
       <form

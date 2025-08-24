@@ -24,15 +24,15 @@ export default function Scenary() {
   ));
 
   return (
-    <main ref={ref} className={`h-screen w-full flex flex-col justify-around items-center gap-12 ${inView&&`animate-scroll-into-view`}`}>
+    <main ref={ref} className={`\ px-6 sm:px-12 h-screen w-full flex flex-col justify-around items-center gap-12 ${inView&&`animate-scroll-into-view`}`}>
 
-      {/** ------ bizzare section (1/2) ----- */}
+      {/** ------ title section (1/2) ----- */}
 
-      <div className="w-full h-fit py-8 flex justify-center items-center ">
+      <div className="w-full h-fit py-8 flex justify-center items-center  ">
         <h1 className="text-2xl md:text-4xl">Around our campus, you will discover:</h1>
       </div>
 
-      {/** ------ lower section (2/2) ----- */}
+      {/** ------ carousel section (2/2) ----- */}
       <div className="flex flex-col lg:flex-row justify-center items-center gap-12">
         {/** ------ scene name wrapper ----- */}
         <section

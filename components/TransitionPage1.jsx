@@ -1,11 +1,13 @@
 import Image from "next/image";
 export default function TransitionPage1() {
   return (
-    <main className="my-20 flex justify-center items-center
-    py-20">
+    <main className="mt-10 flex flex-col justify-center items-center px-6 sm:px-12 
+    ">
+      {/** ------- top border --------- */}
+      <div className="w-full border-t-2 text-black/10 mb-12"></div>
       <section
         className="relative h-fit w-full max-w-[34.6rem] 
-                 flex items-center justify-center "
+                 flex flex-col"
       >
         <div
           className="h-20 w-20 md:h-50 md:w-50 drop-shadow-xl/40 z-15
@@ -20,7 +22,11 @@ export default function TransitionPage1() {
           fill="true"
           className="object-cover z-10 border-2"
         />
+        <p className="text-xs text-black/60 w-[60%] md:w-[80%] absolute z-20
+        -bottom-18 md:-bottom-10 left-0">Mimi Cavelier is from France, completed her volunteer program at Umoja Foundation Group in the October of 2024</p>
       </section>
+      {/** ------- bottom border --------- */}
+      <div className="w-full border-t-2 mt-20 text-black/10 mb-12"></div>
     </main>
   );
 }
