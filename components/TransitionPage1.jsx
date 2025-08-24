@@ -23,7 +23,7 @@ export default function TransitionPage1() {
           className="object-cover z-10 border-2"
         />
         <p className="text-xs text-black/60 w-[60%] md:w-[80%] absolute z-20
-        -bottom-18 md:-bottom-10 left-0">Mimi Cavelier is from France, completed her volunteer program at Umoja Foundation Group in the October of 2024</p>
+        -bottom-18 md:-bottom-10 left-0">Mimi Cavelier is from France, she had recently completed her volunteer program at Umoja Foundation Group.</p>
       </section>
       {/** ------- bottom border --------- */}
       <div className="w-full border-t-2 mt-20 text-black/10 mb-12"></div>
