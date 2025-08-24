@@ -24,7 +24,8 @@ export default function Scenary() {
   ));
 
   return (
-    <main ref={ref} className={`\ px-6 sm:px-12 h-screen w-full flex flex-col justify-around items-center gap-12 ${inView&&`animate-scroll-into-view`}`}>
+    <main ref={ref} 
+    className={` px-6 sm:px-12 h-fit w-full flex flex-col justify-around items-center gap-12 ${inView&&`animate-scroll-into-view`}`}>
 
       {/** ------ title section (1/2) ----- */}
 

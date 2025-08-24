@@ -2,7 +2,7 @@ import { GoArrowRight } from "react-icons/go";
 
 export default function Cost() {
   return (
-    <main className="px-6 sm:px-12 h-screen max-h-fit w-full flex flex-col gap-12 justify-center items-center">
+    <main className="px-6 sm:px-12 min-h-screen max-h-fit w-full flex flex-col gap-12 justify-center items-center">
       <h1 className="flex flex-row gap-1 items-center text-2xl md:text-4xl">
         Plan your stay <GoArrowRight />{" "}
       </h1>

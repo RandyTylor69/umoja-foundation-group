@@ -7,9 +7,9 @@ export default async function ({ params }) {
   const { activityParam } = await params;
   const activity = activities.find((i) => i.name === activityParam);
   return (
-    <main className="h-screen w-full py-6 md:py-12
+    <main className="min-h-screen h-fit w-full py-6 md:py-12 flex justify-center items-center
     ">
-      <section className="h-fit w-full px-12 flex flex-col gap-12">
+      <section className="h-fit w-full max-w-[80rem] px-12 flex flex-col gap-12">
         <Link href="/#activities" className="flex flex-row items-center gap-2">
           <GoArrowLeft />
           Back to activities

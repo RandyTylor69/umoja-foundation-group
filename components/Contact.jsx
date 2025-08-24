@@ -32,7 +32,7 @@ export default function Contact() {
   }
   return (
     <main
-      className="h-screen w-full bg-secondary px-6 sm:px-12
+      className="min-h-screen w-full bg-secondary px-6 sm:px-12
     flex justify-center items-center  rounded-[4rem] md:rounded-[6rem] lg:rounded-[8rem] p-6 my-20 flex-col gap-12"
     >
       <form

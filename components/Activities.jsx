@@ -74,8 +74,8 @@ export default function Activities() {
   return (
     <main
       data-scroll-container
-      className="h-[85vh] w-full sm:mt-[5rem] md:mt-[10rem]
-      flex flex-col md:flex-row gap-6 px-6 sm:px-12 "
+      className="h-[85vh] w-full mt-[5rem] md:mt-[10rem]
+      flex flex-col md:flex-row gap-6 px-6 sm:px-12  "
     >
       {/** ----- article div ----- */}
       <div
