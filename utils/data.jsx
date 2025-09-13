@@ -55,8 +55,6 @@ export const activities = [
 ];
 
 export const programs = [
-  // The "color" field indicates the text color used within the image.
-
   {
     name: "Office Work",
     description:
@@ -145,5 +143,43 @@ export const scenaries = [
     name: "Mwikhupo Falls",
     description:
       "The eternal and constant water supply and flooding by the Nzoia River and her tributaries makes land arable, along which the magnificent Mwikhupo Falls occurs.",
+  },
+];
+
+export const reviews = [
+  {
+    date: "Oct 6, 2024",
+    content:
+      "I have had the best two to three weeks of my life. The Umoja Foundation Group staff made me feel like part of the team. During my project, I met inspirational people, traveled to some of the most rural communities in Kenya, and improved my communication skills. I would recommend Umoja Foundation Group in Kenya to all my friends, and I am already thinking about doing another project next year. I don’t have a single negative thing to say about my experience, and I’m sad to be leaving. The project exceeded all my expectations. On the weekends, we traveled to many places, and I made memories I will never forget.",
+    authorName: "Mimi Cavelier",
+    authorInfo: "40, France",
+  },
+  {
+    date: "Jan 9, 2024",
+    content:
+      "I loved everything about the experience—teaching the children English, meeting amazing volunteers, making friends, enjoying the hospitality of the local community, the food, the culture, the environment, the wonderful staff, and especially Michael, who picked me up from Nairobi Airport and traveled with me to Matunda. He answered all my questions and made me feel comfortable. Our familiarization made me feel at home. I enjoyed playing football with the children. Thanks for the great experience! I will definitely come back.",
+    authorName: "Spencer",
+    authorInfo: "36, United Kingdom",
+  },
+  {
+    date: "Jan 5, 2024",
+    content:
+      "I've always wanted to get out of my comfort zone, and Umoja Foundation Group made it easy for me to not only learn so much about myself and gain a new perspective on life, but also feel 100% comfortable—even being on the other side of the world. My friendships with other volunteers, staff, and local community members are unlike any other. Kenya will forever hold a special place in my heart. Umoja Foundation Group made this one-of-a-kind experience incredible. I loved being able to be part of the local communities and experience Kenya in such a unique way. I know this won’t be my last Umoja Foundation Group volunteer trip.",
+    authorName: "Rodney",
+    authorInfo: "33, Italy",
+  },
+  {
+    date: "Dec 29, 2023",
+    content:
+      "My family and I want to thank everyone at Umoja Foundation Group for the most wonderful experience in Kenya. We recommend your organization to anyone interested in volunteering and will also consider working with you again in the near future. You did an excellent job in every part of the experience. At first, we had some concerns and reservations because of the little children, and we weren’t sure if they would fit in or enjoy the experience. But we really enjoyed working alongside other volunteer families we met. My family will cherish the memories of the people we met and the experiences we shared. It was one of the best decisions I ever made for my family.",
+    authorName: "Jennifer",
+    authorInfo: "39, Australia",
+  },
+  {
+    date: "Dec 27, 2023",
+    content:
+      "I really enjoyed my volunteer work at Umoja Foundation Group on the child care program in Matunda, Kenya. Everyone—volunteers and locals alike—was very friendly. Many locals would stop on the street to chat, and everyone you met would say 'habari mzungu,' which always made me laugh. The accommodation was basic but suitable, with everyone having their own bed, and the food was delicious at every meal. The tap water wasn’t suitable to drink, so we had to spend some money on bottled water. Overall, it was a wonderful experience.",
+    authorName: "Amalia",
+    authorInfo: "35, Denmark",
   },
 ];

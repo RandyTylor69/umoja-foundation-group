@@ -34,6 +34,7 @@ export default function Navbar() {
         <a href="#activities">Activities</a>
         <a href="#program">Our Programs</a>
         <a href="#scenary">Scenary</a>
+        <a href="#reviews">Reviews</a>
         <a href="#cost">Cost</a>
         <a href="#contact">Contact us</a>
       </nav>
@@ -54,6 +55,7 @@ export default function Navbar() {
           <a href="#activities">Activities</a>
           <a href="#program">Our Programs</a>
           <a href="#scenary">Scenary</a>
+          <a href="#reviews">Reviews</a>
           <a href="#cost">Cost</a>
           <a href="#contact">Contact us</a>
         </nav>

@@ -7,6 +7,7 @@ import TransitionPage1 from "@/components/TransitionPage1";
 import Cost from "@/components/Cost";
 import Contact from "@/components/Contact";
 import Scenary from "@/components/Scenary";
+import Reviews from "@/components/Reviews";
 Landing;
 
 export default function Home() {
@@ -34,6 +35,9 @@ export default function Home() {
       </section>
       <section id="scenary" className="scroll-m-10">
         <Scenary />
+      </section>
+      <section id="reviews" className="scroll-m-10">
+        <Reviews />
       </section>
       <section id="cost">
         <Cost />

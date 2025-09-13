@@ -1,10 +1,10 @@
 import Image from "next/image";
 export default function TransitionPage1() {
   return (
-    <main className="mt-10 flex flex-col justify-center items-center px-6 sm:px-12 
+    <main className="my-20 flex flex-col justify-center items-center px-6 sm:px-12 
     ">
       {/** ------- top border --------- */}
-      <div className="w-full border-t-2 text-black/10 mb-12"></div>
+      <div className="w-full border-t-2 text-black/10 mb-20"></div>
       <section
         className="relative h-fit w-full max-w-[34.6rem] 
                  flex flex-col"
@@ -26,7 +26,7 @@ export default function TransitionPage1() {
         -bottom-18 md:-bottom-10 left-0">Mimi Cavelier is from France, she had recently completed her volunteer program at Umoja Foundation Group.</p>
       </section>
       {/** ------- bottom border --------- */}
-      <div className="w-full border-t-2 mt-20 text-black/10 mb-12"></div>
+      <div className="w-full border-t-2 mt-30 text-black/10"></div>
     </main>
   );
 }

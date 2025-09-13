@@ -66,7 +66,7 @@ export default function Scenary() {
           </div>
         </section>
         {/** ------ scene desctiprion wrapper ----- */}
-        <section className="w-full max-w-[22rem] p-6 ">
+        <section className="w-full lg:max-w-[22rem] p-6">
           <p>{scenaries[curr].description}</p>
         </section>
       </div>
