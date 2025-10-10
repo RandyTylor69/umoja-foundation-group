@@ -155,6 +155,13 @@ export const reviews = [
     authorInfo: "40, France",
   },
   {
+    date: "Feb 14, 2024",
+    content:
+      "My husband and I joined Umoja Foundation Group for a two-week volunteering program in Matunda, Kenya, and it turned out to be one of the most rewarding things we’ve ever done. The communication before arrival was excellent, and the local team welcomed us warmly at the airport. We worked mainly with the women’s empowerment group, helping with daily activities and English lessons. It was touching to see how dedicated and hardworking everyone was. The accommodation was simple but comfortable enough, and the meals were always fresh and delicious. We also had the chance to visit a local market and take a short safari during the weekend, which was absolutely unforgettable.",
+    authorName: "Jennifer Williams",
+    authorInfo: "Germany",
+  },
+  {
     date: "Jan 9, 2024",
     content:
       "I loved everything about the experience—teaching the children English, meeting amazing volunteers, making friends, enjoying the hospitality of the local community, the food, the culture, the environment, the wonderful staff, and especially Michael, who picked me up from Nairobi Airport and traveled with me to Matunda. He answered all my questions and made me feel comfortable. Our familiarization made me feel at home. I enjoyed playing football with the children. Thanks for the great experience! I will definitely come back.",
