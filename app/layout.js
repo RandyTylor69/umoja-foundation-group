@@ -15,6 +15,13 @@ const inter = Inter({
   weight:['300']
 });
 
+export const metadata = {
+  title:
+    "Volunteer in Kenya with Umoja Foundation Group | Programs, Reviews & Fees",
+  description:
+    "Transform lives with Umoja! Choose your volunteer program in Kakamega County, Kenya: medical, teaching, or humanitarian assistance. Fees and reviews are included",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
