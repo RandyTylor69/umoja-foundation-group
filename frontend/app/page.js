@@ -8,15 +8,16 @@ import Cost from "@/components/Cost";
 import Contact from "@/components/Contact";
 import Scenary from "@/components/Scenary";
 import Reviews from "@/components/Reviews";
-import Head from 'next/head';
-
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
       {" "}
       <Head>
-        <title>Best Volunteer Program in Kenya, Africa | Programs, Costs, and Reviews</title>
+        <title>
+          Best Volunteer Program in Kenya, Africa | Programs, Costs, and Reviews
+        </title>
         <meta
           name="description"
           content="Ethical volunteer programs in Kenya focused on wildlife, teaching, and medical aid. See costs, reviews, and apply for your trip to Nairobi and Mombasa."
@@ -43,12 +44,13 @@ export default function Home() {
         <section id="program" className="scroll-m-20">
           <Program />
         </section>
-        <section id="scenary" className="scroll-m-10">
-          <Scenary />
-        </section>
         <section id="reviews" className="scroll-m-10">
           <Reviews />
         </section>
+        <section id="scenary" className="scroll-m-10">
+          <Scenary />
+        </section>
+
         <section id="cost">
           <Cost />
         </section>

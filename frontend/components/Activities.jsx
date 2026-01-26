@@ -69,8 +69,6 @@ export default function Activities() {
     </div>
   ));
 
-  console.log(loading);
-
   return (
     <main
       data-scroll-container

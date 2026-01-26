@@ -190,3 +190,10 @@ export const reviews = [
     authorInfo: "35, Denmark",
   },
 ];
+
+export const metadata = {
+  title: "Volunteer in Kenya, Africa 2026 & 2027 | Our Program and Reviews",
+  description:
+    "Transform lives with Umoja Foundation Group! Choose your volunteer program in Kakamega County, Kenya: medical, teaching, or humanitarian assistance. Fees and reviews are included",
+};
+

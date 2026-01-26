@@ -41,13 +41,13 @@
 h1,
 h2,
 h3,
-a {
+a,
+span {
   font-family: var(--font-monserrat);
 }
 
 p,
 li,
-span,
 label,
 .font-inter {
   font-family: var(--font-inter);

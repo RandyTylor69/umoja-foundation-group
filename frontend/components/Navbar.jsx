@@ -1,15 +1,45 @@
 "use client";
 
 import { RxHamburgerMenu } from "react-icons/rx";
-import React from "react";
+import { useState, useContext, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { AuthContext } from "../app/layout";
 
 export default function Navbar() {
-  const [burger, setBurger] = React.useState(false);
+  // access authContext
+  const context = useContext(AuthContext);
+  const { user, setUser } = context;
+
+  const [burger, setBurger] = useState(false);
   const pathname = usePathname();
 
   function toggleNavbar() {
     setBurger((prev) => !prev);
+  }
+
+  async function logOut() {
+    try {
+      await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/logout`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "X-XSRF-TOKEN": decodeURIComponent(
+            document.cookie
+              .split("; ")
+              .find((row) => row.startsWith("XSRF-TOKEN="))
+              ?.split("=")[1],
+          ),
+        },
+        credentials: "include",
+      });
+
+      setUser(false);
+      alert("Log out successful!");
+    } catch (err) {
+      console.error("Logout failed.", err);
+    }
   }
 
   // only render the nav bar when we're on the main page
@@ -32,32 +62,54 @@ export default function Navbar() {
       >
         <a href="#mission">Mission</a>
         <a href="#activities">Activities</a>
-        <a href="#program">Our Programs</a>
-        <a href="#scenary">Scenary</a>
+        <a href="#program">Programs</a>
+        {user ? (
+          <span
+            className="hover:underline cursor-pointer"
+            onClick={() => logOut()}
+          >
+            Log Out
+          </span>
+        ) : (
+          <Link href="/login">Log In</Link>
+        )}
+
         <a href="#reviews">Reviews</a>
         <a href="#cost">Cost</a>
-        <a href="#contact">Contact us</a>
+        <a href="#contact">Contact</a>
       </nav>
 
       {/** --- burger nav bar --- */}
-      <div onClick={toggleNavbar} className="sm:hidden cursor-pointer flex items-center ">
+      <div
+        onClick={toggleNavbar}
+        className="sm:hidden cursor-pointer flex items-center "
+      >
         <RxHamburgerMenu />
       </div>
 
       <div
         className={`fixed sm:hidden bg-orange-50/40 backdrop-blur-sm transform p-4
             h-[100vh] w-[40rem] top-[3rem] right-[-40rem]  duration-300 border-l-2
-            ${burger ? `-translate-x-50`:``}
+            ${burger ? `-translate-x-50` : ``}
             `}
       >
         <nav className="flex flex-col gap-4">
           <a href="#mission">Mission</a>
           <a href="#activities">Activities</a>
-          <a href="#program">Our Programs</a>
-          <a href="#scenary">Scenary</a>
+          <a href="#program">Programs</a>
+          {user ? (
+            <span
+              className="hover:underline cursor-pointer"
+              onClick={() => logOut()}
+            >
+              Log Out
+            </span>
+          ) : (
+            <Link href="/login">Log In</Link>
+          )}
           <a href="#reviews">Reviews</a>
           <a href="#cost">Cost</a>
-          <a href="#contact">Contact us</a>
+          <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
