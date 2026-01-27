@@ -26,6 +26,14 @@ COPY . .
 # Install dependencies
 RUN composer install --no-dev --optimize-autoloader
 
+# 1. Give the script execution permissions
+RUN chmod +x /var/www/scripts/00-laravel-deploy.sh
+
+# 2. Set the Entrypoint
+# This tells Docker: "Always run this script first"
+ENTRYPOINT ["/var/www/scripts/00-laravel-deploy.sh"]
+
+
 # Expose port 80 and start php-fpm
 EXPOSE 80
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=80"]

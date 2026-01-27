@@ -8,3 +8,5 @@ php artisan route:cache
 echo "Running migrations..."
 # The --force flag is required for migrations to run in production
 php artisan migrate --force
+
+exec "$@"
