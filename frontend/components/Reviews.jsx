@@ -1,16 +1,25 @@
+"use client"
 import { reviews } from "@/utils/data";
-
+import Link from "next/link"
+import { useContext } from "react";
+import { AuthContext } from "@/app/layout";
+import { ImPencil } from "react-icons/im";
 export default function Reviews() {
-    
+
+  const context = useContext(AuthContext);
+  const { user, setUser } = context;
+
   return (
     <div
       className="h-fit w-full px-6 sm:px-12 flex flex-col gap-10
     my-20 "
     >
-      <div className="w-full h-fit py-8 flex ">
-        <h1 className="text-2xl md:text-4xl">
-          Hear from our former voluteers
-        </h1>
+      <div className="w-full h-fit py-8 flex flex-col gap-4
+       ">
+        <h1 className="text-2xl md:text-4xl">Hear from our former voluteers</h1>
+        <Link href="/writeReview" className="text-sm text-black/40 flex gap-2 underline">
+          <ImPencil /> Write a review
+        </Link>
       </div>
       <ul
         className="flex flex-row gap-20 w-full 

@@ -87,12 +87,12 @@ button:hover {
   color: black;
 }
 
-input {
+input, textarea {
   background-color: var(--color-primary);
   padding: 1rem;
   color: black;
 }
 
-input:focus {
+input:focus, textarea:focus {
   outline: none;
 }

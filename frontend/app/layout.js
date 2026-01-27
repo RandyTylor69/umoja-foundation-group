@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
         console.log("Not logged in");
       }
 
-      console.log("User is logged in");
+      
       setUser(true);
     } catch (err) {
       console.error(err);
