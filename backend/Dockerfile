@@ -1,5 +1,5 @@
 # Use an official PHP-FPM image
-FROM php:8.2-fpm
+FROM php:8.4-fpm
 
 # Install system dependencies (needed for MySQL and Laravel)
 RUN apt-get update && apt-get install -y \
