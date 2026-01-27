@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "@/app/layout";
+import { AuthContext } from "@/app/AuthProvider";
 import { ImPencil } from "react-icons/im";
 export default function Reviews() {
   const context = useContext(AuthContext);

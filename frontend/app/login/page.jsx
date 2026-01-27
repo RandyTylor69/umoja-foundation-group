@@ -2,7 +2,7 @@
 import { useState, useContext } from "react";
 import { IoMdArrowBack } from "react-icons/io";
 import { useRouter } from "next/navigation";
-import { AuthContext } from "@/app/layout";
+import { AuthContext } from "@/app/AuthProvider";
 
 export default function () {
   const context = useContext(AuthContext);

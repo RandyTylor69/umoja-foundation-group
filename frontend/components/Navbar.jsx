@@ -1,10 +1,10 @@
 "use client";
 
 import { RxHamburgerMenu } from "react-icons/rx";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { AuthContext } from "../app/layout";
+import { AuthContext } from "../app/AuthProvider";
 
 export default function Navbar() {
   // access authContext

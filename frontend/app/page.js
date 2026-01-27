@@ -1,7 +1,6 @@
 import Landing from "@/components/Landing";
 import Mission from "@/components/Mission";
 import Activities from "@/components/Activities";
-import Image from "next/image";
 import Program from "@/components/Program";
 import TransitionPage1 from "@/components/TransitionPage1";
 import Cost from "@/components/Cost";
