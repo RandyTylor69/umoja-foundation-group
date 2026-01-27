@@ -1,10 +1,28 @@
-"use client"
+"use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import OrganizationSchema from "@/components/OrganizationSchema";
 import "./globals.css";
 import { Montserrat, Inter } from "next/font/google";
 import { useState, useContext, createContext, useEffect } from "react";
+
+export const metaData = {
+  metadataBase: new URL("https://umojafoundationgroup.org"),
+  title: "Volunteer & Impact in Kenya 2026-2027 | Umoja Foundation Group",
+  keywords: [
+    "Umoja Foundation Group",
+    "volunteer in Kenya",
+    "Africa volunteer programs",
+    "nonprofit organization Kenya",
+    "community development Africa",
+    "volunteer opportunities Africa",
+    "charity work in Kenya",
+  ],
+  openGraph: {
+    description:
+      "Join Umoja Foundation Group to make a difference. Explore volunteer programs in Kenya focusing on education, healthcare, and community development.",
+  },
+};
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -40,7 +58,6 @@ export default function RootLayout({ children }) {
         console.log("Not logged in");
       }
 
-      
       setUser(true);
     } catch (err) {
       console.error(err);
