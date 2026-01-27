@@ -196,4 +196,3 @@ export const metadata = {
   description:
     "Transform lives with Umoja Foundation Group! Choose your volunteer program in Kakamega County, Kenya: medical, teaching, or humanitarian assistance. Fees and reviews are included",
 };
-

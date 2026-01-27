@@ -1,12 +1,12 @@
 "use client";
-import { reviews } from "@/utils/data";
 import Link from "next/link";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "@/app/layout";
 import { ImPencil } from "react-icons/im";
 export default function Reviews() {
   const context = useContext(AuthContext);
   const { user, setUser } = context;
+  const [reviews, setReviews] = useState([]);
 
   // fetch all reviews from db
 
@@ -37,15 +37,15 @@ export default function Reviews() {
       }
 
       const data = await res.json();
-      console.log(data);
+      setReviews(data)
     } catch (err) {
       console.error("Error!", err.message);
     }
   };
 
-  useEffect(()=>{
-    getReviews()
-  }, [])
+  useEffect(() => {
+    getReviews();
+  }, [reviews]);
 
   return (
     <div
@@ -57,37 +57,41 @@ export default function Reviews() {
        "
       >
         <h1 className="text-2xl md:text-4xl">Hear from our former voluteers</h1>
-        <button>
-          <Link
-            href="/writeReview"
-            className="flex justify-center items-center gap-2"
-          >
-            <ImPencil /> Write a review
-          </Link>
-        </button>
+        {user && (
+          <button className="!bg-[#2F4F3E] hover:!bg-primary ">
+            <Link
+              href="/writeReview"
+              className="flex justify-center items-center gap-2"
+            >
+              <ImPencil /> Write a review
+            </Link>
+          </button>
+        )}
       </div>
       <ul
-        className="flex flex-row gap-20 w-full 
+        className="flex flex-row gap-8 w-full 
             overflow-auto
       "
       >
         {reviews.map((r, index) => (
           <li
             key={index}
-            className="h-[34rem] w-[17rem] shrink-0 bg-secondary p-4 relative"
+            className="h-[28rem] w-[19rem] rounded-2xl
+             shrink-0 bg-[#2F4F3E] text-secondary p-6 relative"
           >
-            <h1 className="text-xl">{r.authorName}</h1>
-            <p className="text-sm mb-6">{r.authorInfo}</p>
+            <h1 className="text-xl">{r.name}</h1>
+            <p className="text-sm mb-6">{r.location}</p>
             <p className="text-sm mb-6 text-justify">{r.content}</p>
             <p
               className="text-sm
             absolute bottom-4 right-4"
             >
-              {r.date}
+              {r.year}
             </p>
           </li>
         ))}
       </ul>
+
       {/** ------- bottom border to the next component --------- */}
       <div className="w-full border-t-2 text-black/10 mt-10"></div>
     </div>

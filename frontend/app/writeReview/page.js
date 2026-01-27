@@ -39,6 +39,7 @@ export default function () {
         throw new Error("Failed Fetch!", res.message);
       }
       const data = await res.json();
+      alert("Your review is posted!");
       console.log(data);
     } catch (err) {
       console.error(err.message);
