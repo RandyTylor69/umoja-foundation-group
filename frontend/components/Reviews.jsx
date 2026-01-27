@@ -1,25 +1,70 @@
-"use client"
+"use client";
 import { reviews } from "@/utils/data";
-import Link from "next/link"
-import { useContext } from "react";
+import Link from "next/link";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "@/app/layout";
 import { ImPencil } from "react-icons/im";
 export default function Reviews() {
-
   const context = useContext(AuthContext);
   const { user, setUser } = context;
+
+  // fetch all reviews from db
+
+  const getReviews = async () => {
+    // 1. Get security token from sanctum
+    await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/sanctum/csrf-cookie`, {
+      credentials: "include",
+    });
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/reviews`,
+        {
+          method: "GET",
+          credentials: "include",
+          headers: {
+            // present the security token to Laravel
+            "X-XSRF-TOKEN": decodeURIComponent(
+              document.cookie
+                .split("; ")
+                .find((row) => row.startsWith("XSRF-TOKEN="))
+                ?.split("=")[1],
+            ),
+          },
+        },
+      );
+      if (!res.ok) {
+        throw new Error("Failed fetch!", res.message);
+      }
+
+      const data = await res.json();
+      console.log(data);
+    } catch (err) {
+      console.error("Error!", err.message);
+    }
+  };
+
+  useEffect(()=>{
+    getReviews()
+  }, [])
 
   return (
     <div
       className="h-fit w-full px-6 sm:px-12 flex flex-col gap-10
     my-20 "
     >
-      <div className="w-full h-fit py-8 flex flex-col gap-4
-       ">
+      <div
+        className="w-full h-fit py-8 flex flex-col gap-4
+       "
+      >
         <h1 className="text-2xl md:text-4xl">Hear from our former voluteers</h1>
-        <Link href="/writeReview" className="text-sm text-black/40 flex gap-2 underline">
-          <ImPencil /> Write a review
-        </Link>
+        <button>
+          <Link
+            href="/writeReview"
+            className="flex justify-center items-center gap-2"
+          >
+            <ImPencil /> Write a review
+          </Link>
+        </button>
       </div>
       <ul
         className="flex flex-row gap-20 w-full 

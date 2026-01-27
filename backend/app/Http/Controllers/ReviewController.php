@@ -24,4 +24,8 @@ class ReviewController extends Controller{
             'data' => $review
         ], 201);
     }
+
+    public function index(){
+        return response()->json(Review::all());
+    }
 }
