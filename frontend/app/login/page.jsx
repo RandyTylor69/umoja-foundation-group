@@ -25,6 +25,7 @@ export default function () {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
+          "X-Requested-With": "XMLHttpRequest",
           "X-XSRF-TOKEN": decodeURIComponent(
             document.cookie
               .split("; ")
@@ -65,6 +66,7 @@ export default function () {
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
+            "X-Requested-With": "XMLHttpRequest",
             "X-XSRF-TOKEN": decodeURIComponent(
               document.cookie
                 .split("; ")
