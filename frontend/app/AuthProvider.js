@@ -5,8 +5,10 @@ export const AuthContext = createContext();
 
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const isLoggedIn = async () => {
+    if (!loading && user) return;
     try {
       // FIRST FETCH: GET THE COOKIE
       await fetch(
@@ -37,6 +39,8 @@ export default function AuthProvider({ children }) {
     } catch (err) {
       console.error("Auth check failed:", err);
       setUser(false);
+    } finally {
+      setLoading(false); // Stop the cycle
     }
   };
 
