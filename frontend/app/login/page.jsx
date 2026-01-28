@@ -54,7 +54,7 @@ export default function () {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            username: input.name,
+            username: input.username,
             password: input.password,
           }),
         },
