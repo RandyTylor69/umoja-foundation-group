@@ -34,14 +34,14 @@ app.post("/login", (req, res) => {
       if (err) {
         res.send({ err: err });
       }
-      if (result) {
+      if (result.length >0 ) {
         res.send(result); // if user exists, send the user
       } else {
         res.send({ message: "Password / username incorrect" }); // if user exists but pw is wrong
       }
     },
   );
-  res.status(201).json({ message: "User logged in successfully." });
+  
 });
 
 app.listen(3001, () => {

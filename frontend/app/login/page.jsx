@@ -11,7 +11,6 @@ export default function () {
   const [authType, setAuthType] = useState("login"); // login or signup
 
   const logIn = async (input) => {
-    
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/login`, {
         method: "POST",
@@ -25,8 +24,15 @@ export default function () {
         throw new Error("Login failed. Response status:", response.status);
       }
       const data = await res.json();
-      console.log(data);
+
+      // If user enters wrong password
+      if (data.message == "Password / username incorrect") {
+        alert(data.message);
+        return;
+      }
+
       setUser(true);
+
       alert("Successful Login!");
       router.push("/");
     } catch (err) {
