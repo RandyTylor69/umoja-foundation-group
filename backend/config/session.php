@@ -169,7 +169,7 @@ return [
     |
     */
 
-    'secure' => true,
+    'secure' => env('SESSION_SECURE_COOKIE', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -198,8 +198,7 @@ return [
     | Supported: "lax", "strict", "none", null
     |
     */
-
-    'same_site' => 'none',
+'same_site' => env('SESSION_SAME_SITE', 'lax'),
 
     /*
     |--------------------------------------------------------------------------
@@ -212,6 +211,6 @@ return [
     |
     */
 
-    'partitioned' => true,
+    'partitioned' => env('SESSION_PARTITIONED', false),
 
 ];
