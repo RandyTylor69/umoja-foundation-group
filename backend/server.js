@@ -8,7 +8,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors());
+app.use(cors({ origin: process.env.FRONTEND_URL }));
 dotenv.config();
 
 const db = mysql.createConnection({
@@ -25,6 +25,7 @@ const db = mysql.createConnection({
 
 app.post("/register", (req, res) => {
   const { username, password } = req.body;
+  console.log("Data received:", req.body);
   db.query("INSERT INTO users (username, password) VALUES (?,?)", [
     username,
     password,
