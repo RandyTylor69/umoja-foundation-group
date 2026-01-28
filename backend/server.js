@@ -14,7 +14,7 @@ const db = mysql.createConnection({
   host: process.env.DB_HOST,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  PORT: process.env.PORT,
+  port: 4000,
   ssl: {
     minVersion: "TLSv1.2",
     rejectUnauthorized: true, // Set to true for maximum security
