@@ -14,6 +14,11 @@ const db = mysql.createConnection({
   host: process.env.DB_HOST,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
+  PORT: process.env.PORT,
+  ssl: {
+    minVersion: "TLSv1.2",
+    rejectUnauthorized: true, // Set to true for maximum security
+  },
 });
 
 app.post("/register", (req, res) => {
@@ -73,6 +78,6 @@ app.get("/reviews", (req, res) => {
     }
   });
 });
-app.listen(3001, () => {
+app.listen(process.env.PORT, () => {
   console.log("Server is running");
 });
