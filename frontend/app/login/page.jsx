@@ -9,54 +9,32 @@ export default function () {
   const { user, setUser } = context;
   const router = useRouter();
   const [authType, setAuthType] = useState("login"); // login or signup
-  const logIn = async (input) => {
-    /* 1. Pin the server to get a security token in order to log in,
-          this "csrf" token ensures Laravel that the next request 
-          comes from the React app, not some weird randomware.
-    */
-    await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/sanctum/csrf-cookie`, {
-      credentials: "include",
-    });
 
-    // 2. Post the login data to MySQL.
+  const logIn = async (input) => {
+    
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
-          "X-Requested-With": "XMLHttpRequest",
-          "X-XSRF-TOKEN": decodeURIComponent(
-            document.cookie
-              .split("; ")
-              .find((row) => row.startsWith("XSRF-TOKEN="))
-              ?.split("=")[1],
-          ),
         },
         body: JSON.stringify(input),
-        credentials: "include",
       });
       if (!res.ok) {
         alert("Please create a new account first!");
         throw new Error("Login failed. Response status:", response.status);
       }
+      const data = await res.json();
+      console.log(data);
       setUser(true);
-      alert("Successful Login!")
+      alert("Successful Login!");
       router.push("/");
     } catch (err) {
       console.error(err.message);
     }
   };
 
-  const signUp = async (input) => {
-    /* 1. Pin the server to get a security token in order to log in,
-          this "csrf" token ensures Laravel that the next request 
-          comes from the React app, not some weird randomware.
-    */
-    await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/sanctum/csrf-cookie`, {
-      credentials: "include",
-    });
-
+  const register = async (input) => {
     // 2. Post the login data to MySQL.
     try {
       const res = await fetch(
@@ -65,22 +43,11 @@ export default function () {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Accept: "application/json",
-            "X-Requested-With": "XMLHttpRequest",
-            "X-XSRF-TOKEN": decodeURIComponent(
-              document.cookie
-                .split("; ")
-                .find((row) => row.startsWith("XSRF-TOKEN="))
-                ?.split("=")[1],
-            ),
           },
           body: JSON.stringify({
-            name: input.name,
-            email: input.email,
+            username: input.name,
             password: input.password,
-            password_confirmation: input.password_confirmation,
           }),
-          credentials: "include",
         },
       );
       if (!res.ok) {
@@ -100,7 +67,7 @@ export default function () {
 
     if (authType == "login") {
       logIn(input);
-    } else signUp(input);
+    } else register(input);
   };
 
   return (
@@ -110,7 +77,7 @@ export default function () {
     >
       <form
         action={handleSubmit}
-        className={`${authType == "login" ? "h-100" : "h-180"} w-80 rounded-2xl bg-secondary relative
+        className={`h-100 w-80 rounded-2xl bg-secondary relative
         flex flex-col justify-center items-center gap-4`}
       >
         <button
@@ -120,30 +87,12 @@ export default function () {
         >
           <IoMdArrowBack />
         </button>
-        {authType == "signup" && (
-          <>
-            {" "}
-            <label>Name</label>
-            <input name="name" required placeholder="John Doe" />
-          </>
-        )}
 
-        <label>Email</label>
-        <input
-          name="email"
-          type="email"
-          required
-          placeholder="johndoe@gmail.com"
-        />
+        <label>Name</label>
+        <input name="name" required placeholder="John Doe" />
+
         <label>Password</label>
         <input name="password" type="password" required />
-
-        {authType == "signup" && (
-          <>
-            <label>Confirm Password</label>
-            <input name="password_confirmation" type="password" required />
-          </>
-        )}
 
         <button type="submit" className="mt-4">
           {authType == "login" ? "Log In" : "Sign Up"}

@@ -10,13 +10,7 @@ export default function AuthProvider({ children }) {
   const isLoggedIn = async () => {
     if (!loading && user) return;
     try {
-      // FIRST FETCH: GET THE COOKIE
-      await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/sanctum/csrf-cookie`,
-        {
-          credentials: "include",
-        },
-      );
+
 
       // Now attempt to get the user
       const res = await fetch(
@@ -45,7 +39,7 @@ export default function AuthProvider({ children }) {
   };
 
   useEffect(() => {
-    isLoggedIn();
+    
   }, []);
 
   return (

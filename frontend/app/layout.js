@@ -6,7 +6,7 @@ import AuthProvider from "./AuthProvider";
 
 export const metadata = {
   metadataBase: new URL("https://umojafoundationgroup.org"),
-  title: "Volunteer & Impact in Kenya 2026-2027 | Umoja Foundation Group",
+  title: "Umoja Foundation Group | Volunteer & Impact in Kenya 2026-2027",
   keywords: [
     "Umoja Foundation Group",
     "volunteer in Kenya",

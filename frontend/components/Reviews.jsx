@@ -11,10 +11,7 @@ export default function Reviews() {
   // fetch all reviews from db
 
   const getReviews = async () => {
-    // 1. Get security token from sanctum
-    await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/sanctum/csrf-cookie`, {
-      credentials: "include",
-    });
+
     try {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/reviews`,
@@ -44,7 +41,7 @@ export default function Reviews() {
   };
 
   useEffect(() => {
-    getReviews();
+    
   }, [reviews]);
 
   return (
