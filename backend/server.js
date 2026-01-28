@@ -1,11 +1,13 @@
+import dotenv from "dotenv";
 import express from "express";
 import mysql from "mysql2";
-import dotenv from "dotenv";
+
 import cors from "cors";
 
 const app = express();
 
 app.use(express.json());
+
 app.use(cors());
 dotenv.config();
 
@@ -37,13 +39,15 @@ app.post("/login", (req, res) => {
     [username, password],
     (err, result) => {
       if (err) {
-        res.send({ err: err });
+        return res.status(500).send({ err: err });
       }
       if (result.length > 0) {
         console.log("username:", username, "password:", password);
-        res.send({ result, message: username + " " + password }); // if user exists, send the user
+        return res.send({ result, message: username + " " + password }); // if user exists, send the user
       } else {
-        res.send({ result, message: "Password / username incorrect" }); // if user exists but pw is wrong
+        return res
+          .status(401)
+          .send({ result, message: "Password / username incorrect" }); // if user exists but pw is wrong
       }
     },
   );
@@ -71,10 +75,10 @@ app.post("/reviews", (req, res) => {
 app.get("/reviews", (req, res) => {
   db.query("SELECT * FROM reviews", (err, result) => {
     if (err) {
-      res.send({ err: err });
+      return res.status(500).send({ err: err });
     }
     if (result.length > 0) {
-      res.send({ result });
+      return res.send({ result });
     }
   });
 });
