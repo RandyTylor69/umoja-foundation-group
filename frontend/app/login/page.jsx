@@ -25,8 +25,11 @@ export default function () {
       }
       const data = await res.json();
 
+      console.log(data);
+
       // If user enters wrong password
       if (data.message == "Password / username incorrect") {
+        
         alert(data.message);
         return;
       }
@@ -95,7 +98,7 @@ export default function () {
         </button>
 
         <label>Name</label>
-        <input name="name" required placeholder="John Doe" />
+        <input name="username" required placeholder="John Doe" />
 
         <label>Password</label>
         <input name="password" type="password" required />

@@ -8,39 +8,25 @@ export default function () {
     const input = Object.fromEntries(formData.entries());
 
     try {
-      // 1. GET the CSRF cookie first
-      await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/sanctum/csrf-cookie`,
-        {
-          credentials: "include",
-        },
-      );
-      // 2. POST the review
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/reviews`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/reviews`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Accept: "application/json",
-            "X-XSRF-TOKEN": decodeURIComponent(
-              document.cookie
-                .split("; ")
-                .find((row) => row.startsWith("XSRF-TOKEN="))
-                ?.split("=")[1],
-            ),
           },
 
           body: JSON.stringify(input),
-          credentials: "include",
         },
       );
       if (!res.ok) {
         throw new Error("Failed Fetch!", res.message);
       }
       const data = await res.json();
+
       alert("Your review is posted!");
       console.log(data);
+      router.push("/")
     } catch (err) {
       console.error(err.message);
     }

@@ -25,16 +25,12 @@ export default function Navbar() {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
-          "X-XSRF-TOKEN": decodeURIComponent(
-            document.cookie
-              .split("; ")
-              .find((row) => row.startsWith("XSRF-TOKEN="))
-              ?.split("=")[1],
-          ),
+          
         },
-        credentials: "include",
+       
       });
 
+      
       setUser(false);
       alert("Log out successful!");
     } catch (err) {

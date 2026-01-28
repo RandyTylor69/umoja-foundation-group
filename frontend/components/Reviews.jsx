@@ -11,38 +11,23 @@ export default function Reviews() {
   // fetch all reviews from db
 
   const getReviews = async () => {
-
     try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/reviews`,
-        {
-          method: "GET",
-          credentials: "include",
-          headers: {
-            // present the security token to Laravel
-            "X-XSRF-TOKEN": decodeURIComponent(
-              document.cookie
-                .split("; ")
-                .find((row) => row.startsWith("XSRF-TOKEN="))
-                ?.split("=")[1],
-            ),
-          },
-        },
-      );
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/reviews`);
       if (!res.ok) {
         throw new Error("Failed fetch!", res.message);
       }
 
       const data = await res.json();
-      setReviews(data)
+      console.log(data);
+      setReviews(data.result);
     } catch (err) {
       console.error("Error!", err.message);
     }
   };
 
   useEffect(() => {
-    
-  }, [reviews]);
+    getReviews();
+  }, []);
 
   return (
     <div
@@ -70,23 +55,24 @@ export default function Reviews() {
             overflow-auto
       "
       >
-        {reviews.map((r, index) => (
-          <li
-            key={index}
-            className="h-[28rem] w-[19rem] rounded-2xl
+        {reviews.length > 0 &&
+          reviews.map((r, index) => (
+            <li
+              key={index}
+              className="h-[28rem] w-[19rem] rounded-2xl
              shrink-0 bg-[#2F4F3E] text-secondary p-6 relative"
-          >
-            <h1 className="text-xl">{r.name}</h1>
-            <p className="text-sm mb-6">{r.location}</p>
-            <p className="text-sm mb-6 text-justify">{r.content}</p>
-            <p
-              className="text-sm
-            absolute bottom-4 right-4"
             >
-              {r.year}
-            </p>
-          </li>
-        ))}
+              <h1 className="text-xl">{r.name}</h1>
+              <p className="text-sm mb-6">{r.location}</p>
+              <p className="text-sm mb-6 text-justify">{r.content}</p>
+              <p
+                className="text-sm
+            absolute bottom-4 right-4"
+              >
+                {r.year}
+              </p>
+            </li>
+          ))}
       </ul>
 
       {/** ------- bottom border to the next component --------- */}

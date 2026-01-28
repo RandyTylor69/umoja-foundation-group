@@ -34,16 +34,45 @@ app.post("/login", (req, res) => {
       if (err) {
         res.send({ err: err });
       }
-      if (result.length >0 ) {
-        res.send(result); // if user exists, send the user
+      if (result.length > 0) {
+        console.log("username:", username, "password:", password);
+        res.send({ result, message: username + " " + password }); // if user exists, send the user
       } else {
-        res.send({ message: "Password / username incorrect" }); // if user exists but pw is wrong
+        res.send({ result, message: "Password / username incorrect" }); // if user exists but pw is wrong
       }
     },
   );
-  
 });
 
+app.post("/logout", (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res.status(500).json({ message: "Could not log out" });
+    }
+    res.clearCookie("connect.sid"); // "connect.sid" is the default session cookie name
+    res.json({ message: "Logged out successfully" });
+  });
+});
+
+app.post("/reviews", (req, res) => {
+  const { name, year, location, content } = req.body;
+  db.query(
+    "INSERT INTO reviews (name, year, location, content) VALUES(?,?,?,?)",
+    [name, year, location, content],
+  );
+  res.status(201).json({ message: "Review uploaded successfully." });
+});
+
+app.get("/reviews", (req, res) => {
+  db.query("SELECT * FROM reviews", (err, result) => {
+    if (err) {
+      res.send({ err: err });
+    }
+    if (result.length > 0) {
+      res.send({ result });
+    }
+  });
+});
 app.listen(3001, () => {
   console.log("Server is running");
 });
