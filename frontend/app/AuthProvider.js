@@ -8,16 +8,35 @@ export default function AuthProvider({ children }) {
 
   const isLoggedIn = async () => {
     try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/user`,
+      // FIRST FETCH: GET THE COOKIE
+      await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/sanctum/csrf-cookie`,
         {
-          headers: { Accept: "application/json" },
           credentials: "include",
         },
       );
-      if (res.ok) setUser(true);
+
+      // Now attempt to get the user
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/user`,
+        {
+          headers: {
+            Accept: "application/json",
+            "X-Requested-With": "XMLHttpRequest", // Tells Laravel this is an AJAX call
+          },
+          credentials: "include",
+        },
+      );
+
+      if (res.ok) {
+        const data = await res.json();
+        setUser(data); // Store the actual user object instead of just 'true'
+      } else {
+        setUser(false);
+      }
     } catch (err) {
-      console.error(err);
+      console.error("Auth check failed:", err);
+      setUser(false);
     }
   };
 
